@@ -2,6 +2,7 @@
   "expo": {
     "name": "GROCIFY_APP",
     "slug": "GROCIFY_APP",
+    "scheme": "grocify_app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -37,7 +38,8 @@
             "imageWidth": 76
           }
         }
-      ]
+      ],
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true,
