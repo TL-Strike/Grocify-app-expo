@@ -19,6 +19,7 @@ export default function ListScreen() {
       renderItem={({ item }) => <PendingItemCard item={item} />}
       contentContainerStyle={{ padding: 20, gap: 14 }}
       contentInsetAdjustmentBehavior="automatic"
+      showsVerticalScrollIndicator={false}
       ListHeaderComponent={
         <View style={{ gap: 14, paddingTop: 20 }}>
           <TabScreenBackground />

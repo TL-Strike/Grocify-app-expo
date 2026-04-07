@@ -9,10 +9,10 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 
 const PlannerScreen = () => {
   const { items } = useGroceryStore();
-  const pendingItems = items.filter((item) => !item.purchased).length;
-  const highPriorityItems = items.filter(
-    (item) => item.priority === "high",
-  ).length;
+  // const pendingItems = items.filter((item) => !item.purchased).length;
+  // const highPriorityItems = items.filter(
+  //   (item) => item.priority === "high",
+  // ).length;
   const totalQuantity = items
     .filter((item) => !item.purchased)
     .reduce((sum, item) => sum + item.quantity, 0);
