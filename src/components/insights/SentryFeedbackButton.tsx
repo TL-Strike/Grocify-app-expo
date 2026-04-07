@@ -3,6 +3,7 @@ import * as Sentry from "@sentry/react-native";
 import { Pressable, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+// feedback button that shows the Sentry feedback widget when pressed
 const SentryFeedbackButton = () => {
   const insets = useSafeAreaInsets();
 
