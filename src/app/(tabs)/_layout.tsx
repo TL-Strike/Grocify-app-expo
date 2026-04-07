@@ -17,7 +17,7 @@ export default function TabLayout() {
   useEffect(() => {
     loadItems();
   }, []);
-  console.log("Items in store:", items);
+  // console.log("Items in store:", items);
 
   if (!isLoaded) {
     return null;

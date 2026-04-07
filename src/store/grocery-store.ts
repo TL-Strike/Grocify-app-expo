@@ -91,28 +91,25 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
     }
   },
   updateQuantity: async (id, quantity) => {
-    const nextQuantity = Math.max(1, Math.floor(quantity));
+    const nextQuantity = Math.max(1, quantity);
     set({ error: null });
+
     try {
       const res = await fetch(`/api/items/${id}`, {
         method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ quantity: nextQuantity }),
       });
       const payload = (await res.json()) as ItemResponse;
-      if (!res.ok) {
-        throw new Error(`Request failed (${res.status})`);
-      }
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
       set((state) => ({
         items: state.items.map((item) =>
           item.id === id ? payload.item : item,
         ),
       }));
     } catch (error) {
-      console.error("Error updating item quantity:", error);
-      set({ error: "Something went wrong while updating the item quantity." });
+      console.error("Error updating quantity:", error);
+      set({ error: "Something went wrong" });
     }
   },
   togglePurchased: async (id) => {
