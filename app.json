@@ -2,11 +2,10 @@
   "expo": {
     "name": "GROCIFY_APP",
     "slug": "GROCIFY_APP",
-    "scheme": "grocify_app",
+    "scheme": "grocifyapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "grocifyapp",
     "userInterfaceStyle": "automatic",
     "ios": {
       "icon": "./assets/expo.icon",
@@ -39,7 +38,15 @@
           }
         }
       ],
-      "expo-web-browser"
+      "expo-web-browser",
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "grocify",
+          "organization": "trieuanhospital"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
